@@ -48,7 +48,9 @@ object WorkbenchBasePlugin extends AutoPlugin {
       val clientLogger = new AbstractAppender(
         "FakeAppender",
         null,
-        PatternLayout.createDefaultLayout()) {
+        PatternLayout.createDefaultLayout(),
+        true,
+        Array.empty) {
         override def append(event: Log4JLogEvent): Unit = {
 
           val level = sbt.internal.util.ConsoleAppender.toLevel(event.getLevel)

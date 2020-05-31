@@ -2,15 +2,17 @@ package com.lihaoyi
 
 package object workbench {
 
-  import upickle.default.{Reader, Writer}
-  import upickle.Js
+  import upickle.default._
 
   /**
     * A standard way to read and write `Js.Value`s with autowire/upickle
     */
   trait ReadWrite {
-    def write[Result: Writer](r: Result) = upickle.default.writeJs(r)
-    def read[Result: Reader](p: Js.Value) = upickle.default.readJs[Result](p)
+    def write[Result: Writer](r: Result): ujson.Value =
+      upickle.default.read[ujson.Value](upickle.default.transform(r))
+
+    def read[Result: Reader](p: ujson. Js.Value): Result =
+      upickle.default.read[Result](ujson.read(p))
   }
 
   /**
