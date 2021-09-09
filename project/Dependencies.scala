@@ -9,7 +9,7 @@ object Dependencies {
   val akkaStream = "com.typesafe.akka" %% "akka-stream" % "2.6.5"
 
   // js and shared dependencies
-  val autowire = Def.setting("com.lihaoyi" %%% "autowire" % "0.3.2")
-  val dom = Def.setting("org.scala-js" %%% "scalajs-dom" % "1.0.0")
-  val upickle = Def.setting("com.lihaoyi" %%% "upickle" % "1.1.0")
+  val autowire = Def.setting("com.lihaoyi" %%% "autowire" % "0.3.3")
+  val dom = Def.setting("org.scala-js" %%% "scalajs-dom" % "1.1.0")
+  val upickle = Def.setting("com.lihaoyi" %%% "upickle" % "1.4.0")
 }

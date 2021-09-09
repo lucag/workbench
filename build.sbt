@@ -3,7 +3,7 @@ import sbt.Keys._
 inThisBuild(Def.settings(
   version := "0.4.2",
   organization := "com.lihaoyi",
-  scalaVersion := "2.12.11",
+  scalaVersion := "2.12.14",
   scalacOptions ++= Seq("-feature", "-deprecation"),
 ))
 
@@ -39,7 +39,7 @@ lazy val root = project.in(file("."))
       (fullOptJS in (client, Compile)).value
       (artifactPath in (client, Compile, fullOptJS)).value
     },
-    addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.1.0"),
+    addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.7.0"),
     libraryDependencies ++= Seq(
       Dependencies.akkaHttp,
       Dependencies.akka,
